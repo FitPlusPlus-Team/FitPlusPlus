@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/home/home";
 import About from "./components/about/about";
-import Exercises from "./components/exercises/exercises";
+import Workouts from "./components/workouts/workouts";
 import Food from "./components/food/food";
 
 const App = () => {
@@ -16,8 +16,8 @@ const App = () => {
           <Route exact path="/about">
             <About />
           </Route>
-          <Route exact path="/exercises">
-            <Exercises />
+          <Route exact path="/workouts">
+            <Workouts />
           </Route>
           <Route exact path="/food">
             <Food />
