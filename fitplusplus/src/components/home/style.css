@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
-    --background-main: linear-gradient(90deg, rgb(255,252,252),rgb(252,244,228) );
-    --color-1: #454C57
+    --background-main: linear-gradient(80deg, rgb(255,252,252),rgb(252,244,228) );
+    --background-secondary: white; 
+    --color-1: #454C57;
+    --accent-gradient: linear-gradient(45deg, #F97C53,#F1AE94);
 }
 
 
@@ -16,13 +18,15 @@ nav{
     display: flex;
     width: 100%;
     justify-content: space-around;
-    padding:20px;
+    align-items: center;
+    padding:30px;
     box-sizing: border-box;
 }
 
 #nav-links a{
     display: inline-block;
     font-weight: 500;
+    font-size: 20px;
     margin: 0 20px;
     color: var(--color-1);
     text-decoration: none;
@@ -31,4 +35,20 @@ nav{
 
 #nav-links a:hover{
     transform: scale(1.1)
+}
+
+#sign-in{
+    padding:10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 100px;
+    border:none;
+    color: var(--background-secondary);
+    background: var(--accent-gradient)
+    
+}
+
+header .container{  
+    
+    
 }
