@@ -14,6 +14,7 @@ const Home = () => {
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           <Link to="/workouts">Workouts</Link>
+          <Link to="/food">Food</Link>
           <div className="spacer"></div>
           <button className="accent-button" id="sign-in">Sign in</button>
         </nav>
