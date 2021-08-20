@@ -15,3 +15,22 @@
   --accent-shadow: 0px 5px 12px #f97c5350;
   --shadow-1: 0px 5px 12px #00000020;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-main: linear-gradient(
+      80deg,
+      #142236,
+      #3C1F0F
+    );
+    --background-secondary: #282832;
+    --background-tertiary: #3a4048;
+    --color-1: white;
+    --color-2: rgb(220,220,220);
+    --accent: #f97c53;
+    --accent-gradient: linear-gradient(45deg, #f97c53, #f1ae94);
+    --accent-shadow: 0px 5px 12px #f97c5330;
+    --shadow-1: 0px 5px 12px #00000040;
+  }
+
+}
