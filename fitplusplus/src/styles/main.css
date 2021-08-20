@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --background-main: linear-gradient(
+    80deg,
+    rgb(255, 252, 252),
+    rgb(252, 244, 228)
+  );
+  --background-secondary: white;
+  --color-1: #3a4048;
+  --color-2: #454c57;
+  --accent: #f97c53;
+  --accent-gradient: linear-gradient(45deg, #f97c53, #f1ae94);
+  --accent-shadow: 0px 5px 12px #f97c5350;
+  --shadow-1: 0px 5px 12px #00000020;
+}
