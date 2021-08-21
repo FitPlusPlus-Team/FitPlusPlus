@@ -52,7 +52,7 @@ const About = () => {
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent
             elementum facilisis leo vel fringilla est ullamcorper.
           </div>
-          <button className="contactBtn">Contact Us</button>
+          <a href="mailto:example@example.com"><button className="contactBtn">Contact Us</button></a>
         </div>
       </div>
     </div>

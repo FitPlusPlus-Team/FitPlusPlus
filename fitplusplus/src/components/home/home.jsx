@@ -413,7 +413,7 @@ const Home = () => {
                 y2="3"
                 gradientUnits="userSpaceOnUse"
               >
-                <stop stop-color="#FD5822" />
+                <stop stopColor="#FD5822" />
                 <stop offset="1" stopColor="#F1AE94" />
               </linearGradient>
             </defs>
@@ -560,7 +560,8 @@ const Home = () => {
       <footer>
         <div className="container">
           <h1>Any questions?</h1>
-          <button className="accent-button"> contact us</button>
+
+          <a href="mailto:example@example.com"><button className="accent-button"> contact us</button></a>
         </div>
       </footer>
     </div>
