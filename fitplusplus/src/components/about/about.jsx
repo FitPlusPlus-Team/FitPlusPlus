@@ -9,7 +9,7 @@ const About = () => {
         <Navbar />
       </header>
       <div className="about-container">
-        <div className="logo">
+        <div className="about-logo">
           <svg
             width="430"
             height="234"

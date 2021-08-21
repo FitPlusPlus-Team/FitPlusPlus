@@ -7,9 +7,39 @@
 .about-container {
   display: flex;
   position: relative;
-  top: 35%;
-  transform: translate(0, -65%);
+  top: 40%;
+  transform: translate(0, -60%);
   padding: 0 50px;
   max-width: 1200px;
   margin: auto;
+}
+
+.about-logo {
+  margin-right: 117px;
+  margin-top: 30px;
+}
+
+.greeting,
+.quote {
+  color: #3a4048;
+}
+
+.greeting {
+  font-weight: 500;
+  font-size: 100px;
+  line-height: 117px;
+  margin-bottom: 24px;
+}
+
+.quote {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 29px;
+  margin-bottom: 48px;
+}
+
+.contactBtn {
+  border-radius: 34px;
+  color: var(--accent);
 }
