@@ -8,7 +8,7 @@ const About = () => {
       <header>
         <Navbar />
       </header>
-      <div className="container">
+      <div className="about-container">
         <div className="logo">
           <svg
             width="430"
