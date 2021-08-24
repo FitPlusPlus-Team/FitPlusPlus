@@ -21,7 +21,7 @@
 
 .greeting,
 .quote {
-  color: #3a4048;
+  color: var(--color-1);
 }
 
 .greeting {

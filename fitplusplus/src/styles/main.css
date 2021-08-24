@@ -16,6 +16,7 @@
   --shadow-1: 0px 5px 12px #00000020;
 }
 
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --background-main: linear-gradient(80deg, #142236, #3c1f0f);
@@ -29,6 +30,7 @@
     --shadow-1: 0px 5px 12px #00000040;
   }
 }
+*/
 
 * {
   box-sizing: border-box;
@@ -36,4 +38,20 @@
 
 p {
   font-family: "open sans";
+}
+
+/* Scroll Bar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
