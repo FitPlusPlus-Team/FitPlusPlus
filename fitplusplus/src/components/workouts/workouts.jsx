@@ -4,7 +4,7 @@ import "./style.css";
 
 const Workouts = () => {
   return (
-    <div id="main">
+    <div id="workouts">
       <Navbar />
       <h1>This is the Exercises Page.</h1>
     </div>
