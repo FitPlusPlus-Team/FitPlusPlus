@@ -1,0 +1,13 @@
+body,html{
+}
+#main{
+    background-color: var(--background-secondary);
+    height:100vh;
+    overflow: auto;
+    padding: 0 50px ;
+}
+
+nav{
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 15px 0;
+}
