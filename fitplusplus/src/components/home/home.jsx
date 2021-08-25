@@ -419,7 +419,7 @@ const Home = () => {
           </svg>
         </button>
       </header>
-      <section id="workouts">
+      <section id="our-workouts">
         <div className="container">
           <h1>
             Our <span className="accent-color">Workouts</span>
