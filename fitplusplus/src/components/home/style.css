@@ -164,6 +164,12 @@ header .container .right svg {
   align-items: center;
   gap: 60px;
 }
+
+#what-we-provide .container .left h1,
+#what-we-provide .container .left p {
+  color: #fef9f2;
+}
+
 #what-we-provide .container .right {
   width: 1400px;
 }
