@@ -83,7 +83,7 @@ header .container .right svg {
   height: 50px;
 }
 
-#workouts {
+#our-workouts {
   background-color: var(--background-secondary);
   padding: 200px 0px;
   clip-path: polygon(
@@ -96,18 +96,18 @@ header .container .right svg {
   );
 }
 
-#workouts .container {
+#our-workouts .container {
   padding: 50px;
   max-width: 1200px;
   margin: auto;
 }
 
-#workouts h1 {
+#our-workouts h1 {
   font-size: 50px;
   margin-bottom: 20px;
 }
 
-#workouts p {
+#our-workouts p {
   margin-bottom: 50px;
 }
 
@@ -192,6 +192,6 @@ footer h1 {
 footer .container {
   max-width: 1200px;
   margin: auto;
-  padding: 50px;
+  padding: 50px 0;
   padding-bottom: 150px;
 }

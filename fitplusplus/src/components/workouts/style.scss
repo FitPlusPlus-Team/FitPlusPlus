@@ -1,0 +1,75 @@
+#workouts{
+    background-color: var(--background-secondary);
+    height: 100vh;
+    overflow: auto;
+    padding: 0 100px;
+    
+    nav{
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        padding: 15px 0;
+        margin-bottom: 50px;
+    }
+    
+    .section-header {
+        h1{
+            margin: 8px 0; 
+        }
+        p{
+            margin: 4px 0;
+        }
+    }
+
+    @media (max-width: 900px) {
+        padding: 0 40px;
+    }
+
+    @media (max-width: 600px) {
+        padding: 0 20px;
+    }
+    
+    .horizontal-scroll{
+        display:flex;
+        overflow:scroll;
+        padding:10px;
+        margin: 10px -10px;
+        gap: 20px;
+
+        * {
+            flex-shrink: 0;
+
+            flex-grow: 0;
+        }
+    }
+
+    .workout-card{
+        width: 300px;
+        height: 200px;
+        position:relative;
+        background: linear-gradient(45deg, #9A77D2, #5B78DD);
+
+        overflow:hidden;
+
+        .card-description{
+            position:absolute;
+            bottom: 0;
+            padding: 10px 15px;
+            width: 100%;
+            background-color: rgba(0,0,0,0.5);
+            
+            color: white;
+
+            h1{
+                font-size: 20px;
+                margin: 2px 0;
+            }
+            p {
+                font-size: 14px;
+                margin: 2px 0;
+                opacity: 0.5;
+            }
+        }
+    }
+
+}
+
+
