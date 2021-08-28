@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../Navbar.jsx"
+import { Link } from "react-router-dom";
 import "./style.scss";
 
 const Workouts = () => {
@@ -36,12 +37,12 @@ const NewWorkouts = () => {
 
 const WorkoutCards = (props) => {
     return (
-        <div className="workout-card">
+        <Link to="/workout" className="workout-card">
             <div className="card-description">
                 <h1>{props.title}</h1>
                 <p>{props.time}</p>
             </div>
-        </div>
+        </Link>
     )
 }
 
