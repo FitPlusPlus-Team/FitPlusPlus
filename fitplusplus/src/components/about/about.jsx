@@ -4,7 +4,7 @@ import "./style.css";
 
 const About = () => {
   return (
-    <div className="main">
+    <div id="about">
       <header>
         <Navbar />
       </header>

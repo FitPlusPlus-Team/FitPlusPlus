@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../Navbar";
 import ColorSwitcher from "../ColorSwitcher";
-import "./style.css";
+import "./style.scss";
 
 const WorkoutCard = () => {
   return <div className="workout-card"></div>;
@@ -9,7 +9,7 @@ const WorkoutCard = () => {
 
 const Home = () => {
   return (
-    <div>
+    <div id="homepage">
       <header>
         <Navbar />
         <div className="container">

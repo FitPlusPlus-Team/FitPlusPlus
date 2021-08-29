@@ -46,6 +46,8 @@
         height: 200px;
         position:relative;
         background: linear-gradient(45deg, #9A77D2, #5B78DD);
+        box-shadow: var(--shadow-1);
+        border-radius: 8px;
         overflow:hidden;
         transition: transform 0.2s, filter 0.2s;
 

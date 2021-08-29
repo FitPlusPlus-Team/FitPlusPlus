@@ -36,6 +36,44 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  margin: 0;
+  background: var(--background-main);
+  font-family: "Roboto";
+  color: var(--color-1);
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  transition: transform 0.2s;
+  background: var(--background-secondary);
+  box-shadow: var(--shadow-1);
+}
+
+button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.accent-color {
+  color: var(--accent);
+}
+
+.accent-button {
+  color: var(--background-secondary);
+  background: var(--accent-gradient);
+  box-shadow: var(--accent-shadow);
+}
+
 p {
   font-family: "open sans";
 }
@@ -55,3 +93,5 @@ p {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+

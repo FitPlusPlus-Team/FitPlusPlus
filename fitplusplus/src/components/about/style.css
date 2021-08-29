@@ -1,6 +1,12 @@
-@import "../../styles/main.css";
+#about header {
+    padding: 0 50px;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+}
 
-.main {
+
+#about {
   height: 100vh;
 }
 

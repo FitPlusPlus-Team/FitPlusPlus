@@ -2,5 +2,16 @@
     background-color: var(--background-secondary);
     height: 100vh;
     padding: 20px;
-    
+    color: white;
+    header {
+        .action{
+            opacity: 0.5;
+            width: fit-content;
+            transition: opacity 0.5s, transform 0.5s;
+            &#current{
+                opacity: 1;
+                transform: scale(1.05);
+            }
+        }
+    }
 }
