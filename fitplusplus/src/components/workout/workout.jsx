@@ -10,17 +10,17 @@ let placeholderData = {
         {
             type: "timer",
             duration: "30",
-            name: "timer 1"
+            name: "Timer 1"
         },
         {
             type: "timer",
             duration: "20",
-            name: "timer 2"
+            name: "Timer 2"
         },
         {
             type: "timer",
             duration: "10",
-            name: "timer 3"
+            name: "Timer 3"
         }
     ]
 }
@@ -49,10 +49,10 @@ const WorkoutHeader = (props) => {
 
     let actions = props.workout.actions.flatMap((action,index)=>{
         //basically, only show the current action, and a few surrounding actions, the other ones will be off screen
-        let indexOffset = Math.abs(index - props.actionIndex)
-        if(indexOffset<=2){
+        let indexOffset = index - props.actionIndex
+        if(Math.abs(indexOffset)<=2){
             return (
-                <h1 key={index} className="action" id={indexOffset == 0 ? "current":""}>{action.name}</h1>
+                <WorkoutHeaderAction key={index} index={index} indexOffset={indexOffset} action={action}/>
             )
         }
     
@@ -60,6 +60,14 @@ const WorkoutHeader = (props) => {
 
     return (
         <header>{actions}</header>
+    )
+}
+
+const WorkoutHeaderAction = (props) => {
+
+    let offset = `calc(${50 + props.indexOffset * 50}% - ${props.indexOffset * 120}px)`
+    return (
+        <h1 className="action" id={props.indexOffset == 0 ? "current":""} style={{left:offset}}>{props.action.name}</h1>
     )
 }
 

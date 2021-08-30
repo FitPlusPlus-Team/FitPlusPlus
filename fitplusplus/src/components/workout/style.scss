@@ -4,13 +4,18 @@
     padding: 20px;
     color: white;
     header {
+        margin-bottom: 200px;
+        width: 100%;
         .action{
             opacity: 0.5;
             width: fit-content;
-            transition: opacity 0.5s, transform 0.5s;
+            transition: opacity 1s, transform 1s, text-shadow 1s, left 1s ease-in-out;
+            position: absolute;
+            transform: translateX(-50%);
             &#current{
                 opacity: 1;
-                transform: scale(1.05);
+                transform:  translateX(-50%) scale(1.5) ;
+                text-shadow: var(--shadow-1)
             }
         }
     }
