@@ -33,13 +33,17 @@ class Workout extends React.Component {
             isPaused: false,
             workout: placeholderData,
         }
+        this.setActionIndex = this.setActionIndex.bind(this)
+    }
+
+    setActionIndex(index){
+        this.setState({actionIndex: index})
     }
 
     render(){
         return (
             <div id="workout" style={{background:this.state.workout.background}}>
-            <WorkoutHeader actionIndex={this.state.actionIndex} workout={this.state.workout}/>
-            <button onClick={()=>{this.setState({actionIndex:this.state.actionIndex+1})}}>+</button>
+            <WorkoutHeader actionIndex={this.state.actionIndex} workout={this.state.workout} setActionIndex={this.setActionIndex}/>
             </div>
         )
     }
@@ -52,7 +56,7 @@ const WorkoutHeader = (props) => {
         let indexOffset = index - props.actionIndex
         if(Math.abs(indexOffset)<=2){
             return (
-                <WorkoutHeaderAction key={index} index={index} indexOffset={indexOffset} action={action}/>
+                <WorkoutHeaderAction key={index} index={index} indexOffset={indexOffset} action={action} setActionIndex={props.setActionIndex}/>
             )
         }
     
@@ -67,7 +71,7 @@ const WorkoutHeaderAction = (props) => {
 
     let offset = `calc(${50 + props.indexOffset * 50}% - ${props.indexOffset * 120}px)`
     return (
-        <h1 className="action" id={props.indexOffset == 0 ? "current":""} style={{left:offset}}>{props.action.name}</h1>
+        <h1 className="action" id={props.indexOffset == 0 ? "current":""} style={{left:offset}} onClick={()=>{props.setActionIndex(props.index)}}>{props.action.name}</h1>
     )
 }
 

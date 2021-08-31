@@ -12,10 +12,15 @@
             transition: opacity 1s, transform 1s, text-shadow 1s, left 1s ease-in-out;
             position: absolute;
             transform: translateX(-50%);
+            cursor: pointer;
             &#current{
                 opacity: 1;
                 transform:  translateX(-50%) scale(1.5) ;
                 text-shadow: var(--shadow-1)
+            }
+
+            &:hover{
+                opacity: 1;
             }
         }
     }
