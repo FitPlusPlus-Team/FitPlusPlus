@@ -1,0 +1,24 @@
+@import "./main.css";
+
+nav {
+  #back-btn {
+    position: relative;
+    top: 10px;
+    left: 50px;
+  }
+
+  #selection-btns {
+    margin-right: 100px;
+
+    button {
+      border-radius: 25px;
+      background-color: var(--accent);
+      color: white;
+    }
+  }
+}
+
+.line {
+  width: 100%;
+  border: 1px solid #f0f0f0;
+}

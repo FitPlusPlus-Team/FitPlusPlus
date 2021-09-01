@@ -1,27 +1,30 @@
-#workout{
-    background-color: var(--background-secondary);
-    height: 100vh;
-    padding: 20px;
-    color: white;
-    header {
-        margin-bottom: 200px;
-        width: 100%;
-        .action{
-            opacity: 0.5;
-            width: fit-content;
-            transition: opacity 1s, transform 1s, text-shadow 1s, left 1s ease-in-out;
-            position: absolute;
-            transform: translateX(-50%);
-            cursor: pointer;
-            &#current{
-                opacity: 1;
-                transform:  translateX(-50%) scale(1.5) ;
-                text-shadow: var(--shadow-1)
-            }
+#workout {
+  background-color: var(--background-secondary);
+  height: 100vh;
+  padding: 20px;
+  color: white;
 
-            &:hover{
-                opacity: 1;
-            }
-        }
+  header {
+    margin-bottom: 200px;
+    width: 100%;
+
+    .action {
+      opacity: 0.5;
+      width: fit-content;
+      transition: opacity 1s, transform 1s, text-shadow 1s, left 1s ease-in-out;
+      position: absolute;
+      transform: translateX(-50%);
+      cursor: pointer;
+
+      &#current {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.5);
+        text-shadow: var(--shadow-1);
+      }
+
+      &:hover {
+        opacity: 1;
+      }
     }
+  }
 }

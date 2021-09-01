@@ -1,22 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/Navbar.css";
+import "../styles/Navbar.scss";
 
 const Navbar = () => {
   return (
-    <nav>
-      <Link to="/" className="logo">
-        Fit+<sup>+</sup>
-      </Link>
-      <div className="spacer"></div>
-      <Link to="/about">About</Link>
-      <Link to="/workouts">Workouts</Link>
-      <Link to="/food">Food</Link>
-      <div className="spacer"></div>
-      <button className="accent-button" id="sign-in">
-        Sign in
-      </button>
-    </nav>
+    <div>
+      <nav>
+        <div id="back-btn">
+          <Link to="/">
+            <svg
+              width="36"
+              height="29"
+              viewBox="0 0 36 29"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M35.3749 12.6249H8.02613L17.9505 2.70057L15.2993 0.0493164L0.848633 14.4999L15.2993 28.9506L17.9505 26.2993L8.02613 16.3749H35.3749V12.6249Z"
+                fill="#CECCD8"
+              />
+            </svg>
+          </Link>
+        </div>
+        <div id="selection-btns">
+          <button className="select-btn">Select</button>
+        </div>
+      </nav>
+      <div className="line"></div>
+    </div>
   );
 };
 

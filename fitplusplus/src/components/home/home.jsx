@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from "../Navbar";
+import MainNavbar from "../MainNavbar";
 import ColorSwitcher from "../ColorSwitcher";
 import "./style.scss";
 
@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div id="homepage">
       <header>
-        <Navbar />
+        <MainNavbar />
         <div className="container">
           <div className="left">
             <h1>

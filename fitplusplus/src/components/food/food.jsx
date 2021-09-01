@@ -1,9 +1,11 @@
 import React from "react";
+import Navbar from "../Navbar";
+import "./style.scss";
 
 const Food = () => {
   return (
-    <div>
-      <h1>This is the Food Page.</h1>
+    <div id="food-page">
+      <Navbar />
     </div>
   );
 };

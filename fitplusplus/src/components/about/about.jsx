@@ -1,12 +1,12 @@
 import React from "react";
-import Navbar from "../Navbar";
+import MainNavbar from "../MainNavbar";
 import "./style.css";
 
 const About = () => {
   return (
     <div id="about">
       <header>
-        <Navbar />
+        <MainNavbar />
       </header>
       <div className="about-container">
         <div className="about-logo">
@@ -52,7 +52,9 @@ const About = () => {
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent
             elementum facilisis leo vel fringilla est ullamcorper.
           </div>
-          <a href="mailto:example@example.com"><button className="contactBtn">Contact Us</button></a>
+          <a href="mailto:example@example.com">
+            <button className="contactBtn">Contact Us</button>
+          </a>
         </div>
       </div>
     </div>
