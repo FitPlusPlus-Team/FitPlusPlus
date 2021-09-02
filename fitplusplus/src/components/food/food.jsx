@@ -8,7 +8,16 @@ const Food = () => {
     <div id="food-page">
       <Navbar />
       <div className="foodContainer">
-        <div className="foodSelection"></div>
+        <div className="foodSelection">
+          {Object.keys(foodList).map((food) => {
+            return (
+              <li className="foodName" key={food}>
+                {food}
+              </li>
+            );
+          })}
+        </div>
+        <div className="dividingLine"></div>
         <div className="foodDisplay"></div>
       </div>
     </div>

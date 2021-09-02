@@ -3,4 +3,35 @@
 #food-page {
   height: 100vh;
   background-color: white;
+
+  .foodContainer {
+    display: flex;
+    flex-direction: row;
+
+    .foodSelection {
+      margin-left: 130px;
+      margin-top: 100px;
+
+      .foodName {
+        color: #484545;
+        cursor: pointer;
+        text-transform: capitalize;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 23px;
+        margin-bottom: 93px;
+
+        &:hover {
+          color: black;
+          transition: 0.4s;
+        }
+      }
+    }
+
+    .dividingLine {
+      border-left: 2px solid #f0f0f0;
+      height: 89.5vh;
+      margin-left: 100px;
+    }
+  }
 }

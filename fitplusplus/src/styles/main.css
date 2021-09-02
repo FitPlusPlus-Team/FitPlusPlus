@@ -34,6 +34,7 @@
 
 * {
   box-sizing: border-box;
+  list-style: none;
 }
 
 html,
@@ -83,9 +84,6 @@ p {
   width: 9px;
 }
 
-::-webkit-scrollbar-track {
-}
-
 ::-webkit-scrollbar-thumb {
   background: #888;
 }
@@ -93,5 +91,3 @@ p {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
-
-
