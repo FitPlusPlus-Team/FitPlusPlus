@@ -1,14 +1,21 @@
 export const foodList = {
   meat: {
-    category: "Meat",
     chickenBreast: {
       foodName: "Chicken Breast",
       information: "Text...",
     },
-  },
 
+    beefSteak: {
+      foodName: "Beef Steak",
+      information: "Text...",
+    },
+
+    what: {
+      foodName: "what",
+      information: "Text...",
+    },
+  },
   fruit: {
-    category: "Fruit",
     Apple: {
       foodName: "Apple",
       information: "Text...",
@@ -16,7 +23,6 @@ export const foodList = {
   },
 
   vegetable: {
-    category: "Vegetable",
     Spinach: {
       foodName: "Spinach",
       information: "Text...",
