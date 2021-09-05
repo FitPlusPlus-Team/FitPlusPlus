@@ -235,27 +235,27 @@ const Home = () => {
                 <path
                   d="M499.239 285.652C499.239 285.652 393.787 318.292 417.428 458.091"
                   stroke="#565987"
-                  strokeMilterlimit="10"
+                  strokemilterlimit="10"
                 />
                 <path
                   d="M437.647 297.353C437.647 297.353 452.162 307.04 447.552 321.593"
                   stroke="#565987"
-                  strokeMilterlimit="10"
+                  strokemilterlimit="10"
                 />
                 <path
                   d="M488.662 305.975C488.662 305.975 479.785 297.033 468.978 301.966"
                   stroke="#565987"
-                  strokeMilterlimit="10"
+                  strokemilterlimit="10"
                 />
                 <path
                   d="M446.979 350.932C446.979 350.932 431.389 343.099 427.357 352.909"
                   stroke="#565987"
-                  strokeMilterlimit="10"
+                  strokemilterlimit="10"
                 />
                 <path
                   d="M408.407 367.252C408.407 367.252 420.109 366.329 420.321 371.871"
                   stroke="#565987"
-                  strokeMilterlimit="10"
+                  strokemilterlimit="10"
                 />
                 <path
                   d="M416.01 459.015C416.01 459.015 457.904 374.643 469.414 376.49C474.882 377.365 477.402 382.692 478.54 388.038C479.946 394.957 479.137 402.139 476.226 408.582C470.285 422.076 454.314 447.714 416.01 459.015Z"
@@ -264,27 +264,27 @@ const Home = () => {
                 <path
                   d="M469.071 392.502C469.071 392.502 425.099 455.628 416.6 458.399"
                   stroke="#565987"
-                  strokeMilterlimit="10"
+                  strokemilterlimit="10"
                 />
                 <path
                   d="M473.115 402.356H462.85"
                   stroke="#565987"
-                  strokeMilterlimit="10"
+                  strokemilterlimit="10"
                 />
                 <path
                   d="M460.822 425.451L444.733 426.134"
                   stroke="#565987"
-                  strokeMilterlimit="10"
+                  strokemilterlimit="10"
                 />
                 <path
                   d="M451.029 406.975L452.778 415.271"
                   stroke="#565987"
-                  strokeMilterlimit="10"
+                  strokemilterlimit="10"
                 />
                 <path
                   d="M433.921 432.225L434.233 439.763"
                   stroke="#565987"
-                  strokeMilterlimit="10"
+                  strokemilterlimit="10"
                 />
                 <path
                   d="M417.254 459.015C417.254 459.015 375.359 374.643 363.85 376.49C358.381 377.365 355.861 382.692 354.723 388.038C353.297 394.951 354.085 402.132 356.975 408.582C362.916 422.076 378.887 447.714 417.254 459.015Z"
@@ -293,27 +293,27 @@ const Home = () => {
                 <path
                   d="M364.129 392.502C364.129 392.502 408.102 455.628 416.6 458.399"
                   stroke="#565987"
-                  strokeMilterlimit="10"
+                  strokemilterlimit="10"
                 />
                 <path
                   d="M360.079 402.356H370.345"
                   stroke="#565987"
-                  strokeMilterlimit="10"
+                  strokemilterlimit="10"
                 />
                 <path
                   d="M372.379 425.451L388.467 426.134"
                   stroke="#565987"
-                  strokeMilterlimit="10"
+                  strokemilterlimit="10"
                 />
                 <path
                   d="M382.165 406.975L380.423 415.271"
                   stroke="#565987"
-                  strokeMilterlimit="10"
+                  strokemilterlimit="10"
                 />
                 <path
                   d="M399.275 432.225L398.963 439.763"
                   stroke="#565987"
-                  strokeMilterlimit="10"
+                  strokemilterlimit="10"
                 />
                 <path
                   d="M489.16 478.716C490.304 477.798 491.137 476.556 491.549 475.156C491.854 473.74 491.244 472.046 489.882 471.529C488.351 470.95 486.715 471.997 485.477 473.056C484.239 474.116 482.814 475.329 481.191 475.101C482.024 474.352 482.648 473.401 483 472.343C483.352 471.284 483.421 470.152 483.2 469.059C483.133 468.605 482.939 468.179 482.64 467.828C481.794 466.929 480.251 467.317 479.231 468.025C475.996 470.279 475.094 474.627 475.081 478.544C474.751 477.127 475.025 475.655 475.019 474.233C475.013 472.81 474.608 471.153 473.377 470.402C472.616 469.985 471.758 469.773 470.888 469.786C469.432 469.737 467.815 469.878 466.819 470.932C465.575 472.237 465.905 474.436 466.981 475.858C468.057 477.281 469.687 478.199 471.187 479.196C472.396 479.903 473.426 480.874 474.198 482.035C474.29 482.196 474.365 482.365 474.422 482.54H483.536C485.576 481.522 487.468 480.236 489.16 478.716Z"
@@ -391,31 +391,23 @@ const Home = () => {
             </svg>
           </div>
         </div>
-        <button id="scroll-disclosure">
+        <button
+          id="scroll-disclosure"
+          onClick={() => {
+            window.location.href = window.location.origin + "/#our-workouts";
+          }}
+        >
           <svg
             width="24"
             height="24"
             viewBox="0 0 24 24"
-            fill="none"
+            fill="#FF7F86"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               d="M18.707 12.707L17.293 11.293L13 15.586V2.5H11V15.586L6.70697 11.293L5.29297 12.707L12 19.414L18.707 12.707Z"
-              fill="url(#paint0_linear)"
+              fill="#FF7F86"
             />
-            <defs>
-              <linearGradient
-                id="paint0_linear"
-                x1="6"
-                y1="13.5"
-                x2="13"
-                y2="3"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop stopColor="#FD5822" />
-                <stop offset="1" stopColor="#F1AE94" />
-              </linearGradient>
-            </defs>
           </svg>
         </button>
       </header>
@@ -682,7 +674,7 @@ const Home = () => {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <g clip-path="url(#clip0)">
+              <g clipPath="url(#clip0)">
                 <path
                   d="M134.62 18.5483L137.433 250.742L259.001 309.981L256.187 77.7884L134.62 18.5483Z"
                   fill="#F2F2F2"
