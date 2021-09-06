@@ -46,6 +46,10 @@ class Workout extends React.Component {
           workout={this.state.workout}
           setActionIndex={this.setActionIndex}
         />
+        <WorkoutContent 
+            actionIndex={this.state.actionIndex}
+            workout={this.state.workout}
+        />
       </div>
     );
   }
@@ -88,5 +92,12 @@ const WorkoutHeaderAction = (props) => {
     </h1>
   );
 };
+
+
+const WorkoutContent = (props) => {
+    return (
+        <h1>Hello</h1>
+    )
+}
 
 export default Workout;
