@@ -431,10 +431,9 @@ const Home = () => {
           Why working out <span className="accent-color">Matters</span>
         </h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil earum,
-          quia veniam ipsa quaerat tenetur nulla, vel, impedit enim voluptate
-          aperiam tempora nisi pariatur aspernatur debitis excepturi est optio
-          eius?
+          Working out matters because there are a lot of health benefits of
+          exercises like improving muscle strength, reduce the risk of heart
+          diseases, and it can even improve your mental health and mood.
         </p>
         <svg
           width="819"
@@ -660,10 +659,10 @@ const Home = () => {
           <div className="left">
             <h1>What do we provide?</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel,
-              praesentium porro sint at, consequuntur eveniet cupiditate
-              corrupti impedit nesciunt consectetur culpa unde velit possimus
-              fugiat eos? Ducimus praesentium explicabo voluptates!
+              We provide a lot of exercises to add to a session and improve the
+              body parts you want to improve. We also provides food choices that
+              you can add to a food list of your own and help you live a healthy
+              life!
             </p>
           </div>
           <div className="right">

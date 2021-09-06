@@ -48,9 +48,10 @@ const About = () => {
         <div className="textContainer">
           <div className="greeting">Hi there!</div>
           <div className="quote">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent
-            elementum facilisis leo vel fringilla est ullamcorper.
+            Welcome to Fit++! We provide different exercises for different body
+            parts and you can even add the exercises to a session. You can start
+            a session anywhere, any time! We also have healthy food that helps
+            with exercises and helps you live a healthier life.
           </div>
           <a href="mailto:example@example.com">
             <button className="contactBtn">Contact Us</button>

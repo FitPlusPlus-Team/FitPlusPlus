@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
 import firebase, { initializeApp } from "firebase/app";
-import "firebase/auth";
 import App from "./app";
 
 const firebaseConfig = {
