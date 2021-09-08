@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.scss";
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <div>
       <nav>
         <div id="back-btn">
-          <Link to="/">
+          <Link to={props.backLink}>
             <svg
               width="36"
               height="29"

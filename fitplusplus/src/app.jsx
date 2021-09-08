@@ -30,10 +30,14 @@ const App = () => {
           </Route>
           {Object.keys(foodList).map((eachFoodName) => {
             return (
-              <Route exact path={"/food/" + eachFoodName.toLowerCase()}>
+              <Route
+                key={eachFoodName}
+                exact
+                path={"/food/" + eachFoodName.toLowerCase()}
+              >
                 <EachFood
-                  foodName={eachFoodName}
-                  foodImgLocation={foodList[eachFoodName].imgLocation}
+                  foodTitle={eachFoodName}
+                  foodName={foodList[eachFoodName].foodName}
                   foodInfo={foodList[eachFoodName].benefits}
                 />
               </Route>

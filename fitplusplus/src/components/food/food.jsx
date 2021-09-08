@@ -16,9 +16,14 @@ const Food = () => {
     selectFood(clickFood);
   };
 
+  const redirectFoodSite = (evt) => {
+    window.location.href =
+      window.location.origin + "/food/" + evt.target.id.toLowerCase();
+  };
+
   return (
     <div id="food-page">
-      <Navbar />
+      <Navbar backLink="/" />
       <div className="foodContainer">
         <div className="foodSelection">
           {foodNameList.map((food) => {
@@ -33,8 +38,15 @@ const Food = () => {
         <div className="foodDisplay">
           {fullFoodNameList.map((fullFoodName) => {
             return (
-              <div className="foodCard" key={fullFoodName}>
-                <h3 className="foodCardTitle">{fullFoodName}</h3>
+              <div
+                className="foodCard"
+                id={fullFoodName}
+                key={fullFoodName}
+                onClick={redirectFoodSite}
+              >
+                <h3 className="foodCardTitle">
+                  {foodList[fullFoodName].foodName}
+                </h3>
               </div>
             );
           })}

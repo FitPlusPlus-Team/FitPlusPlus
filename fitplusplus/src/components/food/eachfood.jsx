@@ -1,20 +1,69 @@
 import React from "react";
-import { withRouter } from "react-router";
 import Navbar from "../Navbar";
+import apple from "./img/imgs/apple.jpg";
+import beefSteak from "./img/imgs/beefSteak.jpg";
+import chickenBreast from "./img/imgs/chickenBreast.jpg";
+import spinach from "./img/imgs/spinach.jpg";
+
+const foodImgChoice = {
+  Apple: apple,
+  beefSteak: beefSteak,
+  chickenBreast: chickenBreast,
+  Spinach: spinach,
+};
 
 const EachFood = (props) => {
-  const pageStyling = {
-    backgroundColor: "white",
-    height: "100vh",
+  const pageStyling = {};
+
+  const infoText = {
+    fontStyle: "normal",
+    fontWeight: "normal",
+    fontSize: "35px",
+    lineHeight: "41px",
+  };
+
+  const titleStyling = {
+    marginTop: "50px",
+    textAlign: "center",
+    fontStyle: "normal",
+    fontWeight: "normal",
+    fontSize: "60px",
+    lineHeight: "70px",
   };
 
   return (
-    <div
-      className="each-food-main-div"
-      id={props.foodName + "-page"}
-      style={pageStyling}
-    >
-      <Navbar />
+    <div style={pageStyling}>
+      <Navbar backLink="/food" />
+      <div>
+        <h1 style={titleStyling}>{props.foodName}</h1>
+        <div
+          style={{
+            display: "inline-block",
+            position: "absolute",
+            left: "50%",
+            transform: "translate(-50%, 0)",
+          }}
+        >
+          <img
+            style={{ marginBottom: "50px" }}
+            src={foodImgChoice[props.foodTitle]}
+          />
+          <p
+            style={{
+              paddingBottom: "100px",
+            }}
+          >
+            <span style={infoText}>Healthy benefits of {props.foodName}:</span>
+            {props.foodInfo.map((eachFoodInfo) => {
+              return (
+                <li style={infoText} key="eachFoodInfo">
+                  {"- " + eachFoodInfo}
+                </li>
+              );
+            })}
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
