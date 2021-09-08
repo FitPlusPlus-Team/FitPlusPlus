@@ -184,16 +184,15 @@ const Timer = (props) => {
         let fractional = time % 1_000;
 
         let timeString = ""
-        // if(hours == 0){
-        //     if(minutes == 0){
-        //         return(`${seconds}.${fractional.toString().padStart(4,"0")}`)
-        //     }else{
-        //         return(`${minutes}:${seconds}.${fractional.toString().padStart(4,"0")}`)
-        //     }
-        // }else {
-        //     return(`${hours}:${minutes}:${seconds}.${fractional.toString().padStart(4,"0")}`)
-        // }
-            return(`${hours}:${minutes}:${seconds}.${fractional.toString().padStart(3,"0")}`)
+        if(hours == 0){
+            if(minutes == 0){
+                return(`${seconds}.${fractional.toString().padStart(4,"0")}`)
+            }else{
+                return(`${minutes}:${seconds}.${fractional.toString().padStart(4,"0")}`)
+            }
+        }else {
+            return(`${hours}:${minutes}:${seconds}.${fractional.toString().padStart(4,"0")}`)
+        }
     }
 
     return (
