@@ -2,6 +2,7 @@ export const foodList = {
   chickenBreast: {
     category: "meat",
     foodName: "Chicken Breast",
+    iconImgLocation: "",
     imgLocation: "",
     benefits: [
       "An excellent source of lean proteins",
@@ -15,6 +16,7 @@ export const foodList = {
   beefSteak: {
     category: "meat",
     foodName: "Beef Steak",
+    iconImgLocation: "",
     imgLocation: "",
     benefits: [
       "Improve your exercise performance",
@@ -27,6 +29,7 @@ export const foodList = {
   Apple: {
     category: "fruit",
     foodName: "Apple",
+    iconImgLocation: "",
     imgLocation: "",
     benefits: [
       "It helps to improve endurance during exercise",
@@ -39,6 +42,7 @@ export const foodList = {
   Spinach: {
     category: "vegetable",
     foodName: "Spinach",
+    iconImgLocation: "",
     imgLocation: "",
     benefits: [
       "It provides Vitamin E",
