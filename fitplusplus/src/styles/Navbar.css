@@ -1,0 +1,61 @@
+@import "../styles/main.css";
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 30px 0;
+  box-sizing: border-box;
+}
+
+nav * {
+  transition: transform 0.2s;
+}
+
+nav *:hover {
+  transform: scale(1.1);
+}
+
+nav *:active {
+  transform: scale(0.95);
+}
+
+.logo {
+  font-size: 32px;
+  background: var(--accent-gradient);
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+  margin: 0;
+}
+
+.logo:hover {
+  cursor: pointer;
+}
+
+.logo sup {
+  display: inline-block;
+  background: var(--accent-gradient);
+  color: var(--background-secondary);
+  border-radius: 50px;
+  box-sizing: border-box;
+  line-height: 20px;
+  padding: 0 4.5px;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+nav a {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0 20px;
+  color: var(--color-2);
+  text-decoration: none;
+}
+
+#sign-in {
+  border-radius: 100px;
+}

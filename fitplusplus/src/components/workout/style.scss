@@ -7,6 +7,10 @@
   header {
     margin-bottom: 200px;
     width: 100%;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 
     .action {
       opacity: 0.5;
@@ -15,8 +19,9 @@
       position: absolute;
       transform: translateX(-50%);
       cursor: pointer;
+      white-space: nowrap;
 
-      &#current {
+      &.current {
         opacity: 1;
         transform: translateX(-50%) scale(1.5);
         text-shadow: var(--shadow-1);
@@ -25,6 +30,31 @@
       &:hover {
         opacity: 1;
       }
+    }
+  }
+
+  .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    
+
+    .action {
+        position: absolute;
+        transition: opacity 1s, transform 1s, text-shadow 1s, left 1s ease-in-out;
+        transform: translateX(-50%) translateY(-50%);
+        opacity: 0.5;
+        top: 50%;
+        white-space: nowrap;
+
+
+        &.current {
+            transform: translateX(-50%) translateY(-50%) scale(1.5);
+            opacity: 1;
+        }
     }
   }
 }

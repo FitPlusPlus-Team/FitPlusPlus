@@ -8,17 +8,17 @@ let placeholderData = {
     {
       type: "timer",
       duration: "30",
-      name: "Timer 1",
+      name: "30 second run",
     },
     {
-      type: "timer",
+      type: "counter",
       duration: "20",
-      name: "Timer 2",
+      name: "20 pushups",
     },
     {
       type: "timer",
-      duration: "10",
-      name: "Timer 3",
+      duration: "40",
+      name: "40 second plank",
     },
   ],
 };
@@ -81,8 +81,7 @@ const WorkoutHeaderAction = (props) => {
   }px)`;
   return (
     <h1
-      className="action"
-      id={props.indexOffset === 0 ? "current" : ""}
+      className={`action ${props.indexOffset === 0 ? "current" : ""}`}
       style={{ left: offset }}
       onClick={() => {
         props.setActionIndex(props.index);
@@ -95,8 +94,62 @@ const WorkoutHeaderAction = (props) => {
 
 
 const WorkoutContent = (props) => {
+  let actions = props.workout.actions.flatMap((action, index) => {
+    // Basically, only show the current action, and a few surrounding actions, the other ones will be off screen
+    let indexOffset = index - props.actionIndex;
+    if (Math.abs(indexOffset) <= 2) {
+      return (
+        <WorkoutContentAction
+          key={index}
+          index={index}
+          indexOffset={indexOffset}
+          action={action}
+        />
+      );
+    }
+  });
+  return <div className="content">{actions}</div>;
+}
+
+const WorkoutContentAction = (props) => {
+    let offset = `calc(${50 + props.indexOffset * 100}% + ${
+        props.indexOffset * 120
+    }px)`;
+    
+    let element
+
+    switch (props.action.type) {
+        case 'timer':
+            element = <Timer action={props.action}/>
+            break;
+
+        case 'counter':
+            element = <Counter action={props.action}/>
+            break;
+
+        default:
+            
+    }
     return (
-        <h1>Hello</h1>
+        <div
+        className={`action ${props.indexOffset === 0 ? "current" : ""}`}
+        style={{ left: offset }}
+        >
+        {element}
+        </div>
+    );
+
+}
+
+const Timer = (props) => {
+    return (
+        <h1>this is a timer</h1>
+    )
+}
+
+const Counter = (props) => {
+    return (
+        <h1>this is a counter</h1>
     )
 }
 
