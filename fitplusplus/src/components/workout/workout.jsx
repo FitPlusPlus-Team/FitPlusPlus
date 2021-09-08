@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "./style.scss";
 
 let placeholderData = {
@@ -49,6 +49,7 @@ class Workout extends React.Component {
         <WorkoutContent 
             actionIndex={this.state.actionIndex}
             workout={this.state.workout}
+            setActionIndex={this.setActionIndex}
         />
       </div>
     );
@@ -104,6 +105,7 @@ const WorkoutContent = (props) => {
           index={index}
           indexOffset={indexOffset}
           action={action}
+          next={()=>{props.setActionIndex(props.actionIndex+1)}}
         />
       );
     }
@@ -120,16 +122,27 @@ const WorkoutContentAction = (props) => {
 
     switch (props.action.type) {
         case 'timer':
-            element = <Timer action={props.action}/>
+            element = <Timer next={props.next} action={props.action}/>
             break;
 
         case 'counter':
-            element = <Counter action={props.action}/>
+            element = <Counter next={props.next} action={props.action}/>
             break;
 
         default:
             
     }
+    
+
+
+    const [isActive,setIsActive] = useState(false)
+
+    useEffect(()=>{
+        setTimeout(()=>{
+            setIsActive(props.indexOffset === 0)
+        },1000) 
+    })
+
     return (
         <div
         className={`action ${props.indexOffset === 0 ? "current" : ""}`}
