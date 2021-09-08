@@ -7,17 +7,18 @@ let placeholderData = {
   actions: [
     {
       type: "timer",
-      duration: "30",
-      name: "30 second run",
+      duration: 10_000,
+      name: "10 second run",
     },
     {
       type: "counter",
-      duration: "20",
+      count: 20,
+      duration: 2_000,
       name: "20 pushups",
     },
     {
       type: "timer",
-      duration: "40",
+      duration: 40_000,
       name: "40 second plank",
     },
   ],
@@ -120,13 +121,15 @@ const WorkoutContentAction = (props) => {
     
     let element
 
+    const [isActive,setIsActive] = useState(false)
+
     switch (props.action.type) {
         case 'timer':
-            element = <Timer next={props.next} action={props.action}/>
+            element = <Timer next={props.next} action={props.action} isActive={isActive}/>
             break;
 
         case 'counter':
-            element = <Counter next={props.next} action={props.action}/>
+            element = <Counter next={props.next} action={props.action} isActive={isActive}/>
             break;
 
         default:
@@ -135,7 +138,6 @@ const WorkoutContentAction = (props) => {
     
 
 
-    const [isActive,setIsActive] = useState(false)
 
     useEffect(()=>{
         setTimeout(()=>{
@@ -155,14 +157,71 @@ const WorkoutContentAction = (props) => {
 }
 
 const Timer = (props) => {
+    const [time, setTime] = useState(props.action.duration)
+
+    useEffect(()=>{
+        if(props.isActive){
+            let startTime = Date.now()
+            let timer = setInterval(()=>{
+                setTime(Math.max(props.action.duration - Date.now() + startTime,0))
+                if(Date.now() - startTime >= props.action.duration) {
+                    props.next()
+                    clearInterval(timer)
+                }
+            },1)
+            return ()=>{
+                clearInterval(timer)
+                setTime(props.action.duration)
+            }
+        }
+    },[props.isActive])
+
+
+    let formatTime = (time) => {
+        let hours = Math.floor(time / 36000_000);
+        let minutes = Math.floor((time % 3600_000) / 60_000);
+        let seconds = Math.floor((time % 60_000) / 1000);
+        let fractional = time % 1_000;
+
+        let timeString = ""
+        // if(hours == 0){
+        //     if(minutes == 0){
+        //         return(`${seconds}.${fractional.toString().padStart(4,"0")}`)
+        //     }else{
+        //         return(`${minutes}:${seconds}.${fractional.toString().padStart(4,"0")}`)
+        //     }
+        // }else {
+        //     return(`${hours}:${minutes}:${seconds}.${fractional.toString().padStart(4,"0")}`)
+        // }
+            return(`${hours}:${minutes}:${seconds}.${fractional.toString().padStart(3,"0")}`)
+    }
+
     return (
-        <h1>this is a timer</h1>
+        <h1>{formatTime(time)}</h1>
     )
 }
 
 const Counter = (props) => {
+    const [count, setCount] = useState(1)
+    useEffect(()=>{
+        if(props.isActive){
+            let _count = 1
+            let counter = setInterval(()=>{
+                setCount(count=>count+1)
+                _count++ 
+                if(_count == props.action.count) {
+                    props.next()
+                    clearInterval(counter)
+                }
+            },props.action.duration)
+            return ()=>{
+                clearInterval(counter)
+                setCount(0)
+            }
+        }
+    },[props.isActive])
     return (
-        <h1>this is a counter</h1>
+        <h1>{count}</h1>
     )
 }
 
