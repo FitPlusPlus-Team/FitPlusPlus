@@ -1,31 +1,50 @@
 export const foodList = {
-  meat: {
-    chickenBreast: {
-      foodName: "Chicken Breast",
-      information: "Text...",
-    },
-
-    beefSteak: {
-      foodName: "Beef Steak",
-      information: "Text...",
-    },
-
-    what: {
-      foodName: "what",
-      information: "Text...",
-    },
-  },
-  fruit: {
-    Apple: {
-      foodName: "Apple",
-      information: "Text...",
-    },
+  chickenBreast: {
+    category: "meat",
+    foodName: "Chicken Breast",
+    imgLocation: "",
+    benefits: [
+      "An excellent source of lean proteins",
+      "A good source of Vitamin B and D",
+      "Help reduce the risk of cancer",
+      "Help in Weight Loss",
+      "and more...",
+    ],
   },
 
-  vegetable: {
-    Spinach: {
-      foodName: "Spinach",
-      information: "Text...",
-    },
+  beefSteak: {
+    category: "meat",
+    foodName: "Beef Steak",
+    imgLocation: "",
+    benefits: [
+      "Improve your exercise performance",
+      "Help in muscle growth",
+      "High quality protein",
+      "It provides Vitamin B",
+    ],
+  },
+
+  Apple: {
+    category: "fruit",
+    foodName: "Apple",
+    imgLocation: "",
+    benefits: [
+      "It helps to improve endurance during exercise",
+      "It may be helpful for weight loss",
+      "It may be good to your heart",
+      "Eating apple can reduce the risk of diabetes",
+    ],
+  },
+
+  Spinach: {
+    category: "vegetable",
+    foodName: "Spinach",
+    imgLocation: "",
+    benefits: [
+      "It provides Vitamin E",
+      "It provides Vitamin K which is essential to bone health",
+      "It provides magnesium that supports your immune system",
+      "Spinach restores energy and improves the function of red blood cells",
+    ],
   },
 };

@@ -4,13 +4,16 @@ import { foodList } from "./foodlist";
 import "./style.scss";
 
 const Food = () => {
-  const [currentSelectedFood, selectFood] = useState(0);
-  const foodNameList = Object.keys(foodList);
+  const [currentSelectedFood, selectFood] = useState("meat");
+  const foodNameList = ["meat", "fruit", "vegetable"];
+
+  const fullFoodNameList = Object.keys(foodList).filter((eachFood) => {
+    return foodList[eachFood].category === currentSelectedFood;
+  });
 
   const changeSelectedFood = (evt) => {
     const clickFood = evt.target.innerHTML;
-    const clickFoodIndex = foodNameList.indexOf(clickFood);
-    selectFood(clickFoodIndex);
+    selectFood(clickFood);
   };
 
   return (
@@ -28,20 +31,13 @@ const Food = () => {
         </div>
         <div className="dividingLine"></div>
         <div className="foodDisplay">
-          {Object.keys(foodList[foodNameList[currentSelectedFood]]).map(
-            (foodItem) => {
-              return (
-                <div className="foodCard" key={foodItem}>
-                  <h3 className="foodCardTitle">
-                    {
-                      foodList[foodNameList[currentSelectedFood]][foodItem]
-                        .foodName
-                    }
-                  </h3>
-                </div>
-              );
-            }
-          )}
+          {fullFoodNameList.map((fullFoodName) => {
+            return (
+              <div className="foodCard" key={fullFoodName}>
+                <h3 className="foodCardTitle">{fullFoodName}</h3>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

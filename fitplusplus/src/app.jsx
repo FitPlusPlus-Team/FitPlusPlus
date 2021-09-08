@@ -5,6 +5,8 @@ import About from "./components/about/about";
 import Workouts from "./components/workouts/workouts";
 import Workout from "./components/workout/workout";
 import Food from "./components/food/food";
+import { foodList } from "./components/food/foodlist";
+import EachFood from "./components/food/eachfood";
 
 const App = () => {
   return (
@@ -26,6 +28,17 @@ const App = () => {
           <Route exact path="/food">
             <Food />
           </Route>
+          {Object.keys(foodList).map((eachFoodName) => {
+            return (
+              <Route exact path={"/food/" + eachFoodName.toLowerCase()}>
+                <EachFood
+                  foodName={eachFoodName}
+                  foodImgLocation={foodList[eachFoodName].imgLocation}
+                  foodInfo={foodList[eachFoodName].benefits}
+                />
+              </Route>
+            );
+          })}
         </Switch>
       </Router>
     </div>
