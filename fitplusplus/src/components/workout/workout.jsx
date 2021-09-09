@@ -196,7 +196,7 @@ const Timer = (props) => {
     let timeString = "";
     if (hours == 0) {
       if (minutes == 0) {
-        return `${seconds}.${fractional.toString().padStart(4, "0")}`;
+        return `${seconds}.${fractional.toString().padStart(3, "0")}`;
       } else {
         return `${minutes}:${seconds}.${fractional
           .toString()
