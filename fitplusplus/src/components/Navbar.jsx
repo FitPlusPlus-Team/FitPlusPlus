@@ -22,9 +22,6 @@ const Navbar = (props) => {
             </svg>
           </Link>
         </div>
-        <div id="selection-btns">
-          <button className="select-btn">Select</button>
-        </div>
       </nav>
       <div className="line"></div>
     </div>
