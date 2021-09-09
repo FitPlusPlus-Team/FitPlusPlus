@@ -17,13 +17,15 @@
       width: fit-content;
       transition: opacity 1s, transform 1s, text-shadow 1s, left 1s ease-in-out;
       position: absolute;
-      transform: translateX(-50%);
+      transform: translateX(-50%) scale(0.6);
       cursor: pointer;
       white-space: nowrap;
+      font-size: 3em;
+      margin: 8px 0px;
 
       &.current {
         opacity: 1;
-        transform: translateX(-50%) scale(1.5);
+        transform: translateX(-50%);
         text-shadow: var(--shadow-1);
       }
 
@@ -45,14 +47,17 @@
     .action {
         position: absolute;
         transition: opacity 1s, transform 1s, text-shadow 1s, left 1s ease-in-out;
-        transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%) scale(0.4);
         opacity: 0.5;
         top: 50%;
         white-space: nowrap;
+        text-shadow: var(--shadow-1);
+
+        font-size: 5em;
 
 
         &.current {
-            transform: translateX(-50%) translateY(-50%) scale(1.5);
+            transform: translateX(-50%) translateY(-50%);
             opacity: 1;
         }
     }

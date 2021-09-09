@@ -17,6 +17,11 @@ let placeholderData = {
       name: "20 pushups",
     },
     {
+        type: "text",
+        duration: 10_000,
+        name: "10 second rest"
+    },
+    {
       type: "timer",
       duration: 40_000,
       name: "40 second plank",
@@ -137,6 +142,12 @@ const WorkoutContentAction = (props) => {
       );
       break;
 
+    case "text":
+      element = (
+        <Text next={props.next} action={props.action} isActive={isActive} />
+      );
+      break;
+
     default:
   }
 
@@ -189,12 +200,12 @@ const Timer = (props) => {
       } else {
         return `${minutes}:${seconds}.${fractional
           .toString()
-          .padStart(4, "0")}`;
+          .padStart(3, "0")}`;
       }
     } else {
       return `${hours}:${minutes}:${seconds}.${fractional
         .toString()
-        .padStart(4, "0")}`;
+        .padStart(3, "0")}`;
     }
   };
 
@@ -216,11 +227,29 @@ const Counter = (props) => {
       }, props.action.duration);
       return () => {
         clearInterval(counter);
-        setCount(0);
+        setCount(1);
       };
     }
   }, [props.isActive]);
   return <h1>{count}</h1>;
 };
+
+const Text = (props) => {
+    useEffect(() => {
+        if (props.isActive) {
+            let startTime = Date.now();
+            let timer = setInterval(() => {
+                if (Date.now() - startTime >= props.action.duration) {
+                    props.next();
+                    clearInterval(timer);
+                }
+            }, 50);
+            return () => {
+                clearInterval(timer);
+            };
+        }
+    }, [props.isActive]);
+    return <h1>{props.action.name}</h1>
+}
 
 export default Workout;
