@@ -1,65 +1,55 @@
 import React, { useEffect, useState } from "react";
 import "./style.scss";
-
-let placeholderData = {
-  name: "Placeholder Workout",
-  background: "linear-gradient(45deg, #9A77D2, #5B78DD)",
-  actions: [
-    {
-      type: "timer",
-      duration: 10_000,
-      name: "10 second run",
-    },
-    {
-      type: "counter",
-      count: 20,
-      duration: 2_000,
-      name: "20 pushups",
-    },
-    {
-        type: "text",
-        duration: 10_000,
-        name: "10 second rest"
-    },
-    {
-      type: "timer",
-      duration: 40_000,
-      name: "40 second plank",
-    },
-  ],
-};
+import { Link } from "react-router-dom";
+import {workoutData} from "../../workoutData"
+import { withRouter } from "react-router";
 
 class Workout extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      actionIndex: 0,
-      isPaused: false,
-      workout: placeholderData,
-    };
-    this.setActionIndex = this.setActionIndex.bind(this);
-  }
+    constructor() {
+        super();
+        this.state = {
+            actionIndex: 0,
+            isPaused: false,
+            workout:null,
+        };
+        this.setActionIndex = this.setActionIndex.bind(this);
+    }
 
-  setActionIndex(index) {
-    this.setState({ actionIndex: index });
-  }
+    componentWillMount(){
+        this.setState({
+            workout:workoutData.find(workout => workout.id == this.props.match.params.id)
+        })
+    }
 
-  render() {
-    return (
-      <div id="workout" style={{ background: this.state.workout.background }}>
-        <WorkoutHeader
-          actionIndex={this.state.actionIndex}
-          workout={this.state.workout}
-          setActionIndex={this.setActionIndex}
-        />
-        <WorkoutContent
-          actionIndex={this.state.actionIndex}
-          workout={this.state.workout}
-          setActionIndex={this.setActionIndex}
-        />
-      </div>
-    );
-  }
+    setActionIndex(index) {
+        this.setState({ actionIndex: index });
+    }
+
+    render() {
+        if(this.state.workout){
+            return (
+                <div id="workout" style={{ background: this.state.workout.background }}>
+                <WorkoutHeader
+                actionIndex={this.state.actionIndex}
+                workout={this.state.workout}
+                setActionIndex={this.setActionIndex}
+                />
+                <WorkoutContent
+                actionIndex={this.state.actionIndex}
+                workout={this.state.workout}
+                setActionIndex={this.setActionIndex}
+                />
+                </div>
+            );
+        }else{
+        return (
+            <div style={{padding: "20px"}}>
+                <h1>Workout Not Found</h1>
+                <Link to="/workouts">Back to workouts</Link>
+            </div>
+        )        
+        }
+    }
 }
 
 const WorkoutHeader = (props) => {
@@ -130,6 +120,12 @@ const WorkoutContentAction = (props) => {
   const [isActive, setIsActive] = useState(false);
 
   switch (props.action.type) {
+    case "start":
+      element = (
+        <Start next={props.next} action={props.action} isActive={isActive} />
+      );
+      break;
+
     case "timer":
       element = (
         <Timer next={props.next} action={props.action} isActive={isActive} />
@@ -148,13 +144,18 @@ const WorkoutContentAction = (props) => {
       );
       break;
 
+    case "finish":
+      element = (
+        <Finish next={props.next} action={props.action} isActive={isActive} />
+      );
+      break;
     default:
   }
 
   useEffect(() => {
     setTimeout(() => {
       setIsActive(props.indexOffset === 0);
-    }, 1000);
+    }, 1400);
   });
 
   return (
@@ -166,6 +167,10 @@ const WorkoutContentAction = (props) => {
     </div>
   );
 };
+
+const Start = (props) => {
+    return <button onClick={()=>{props.next()}}>Start</button>
+}
 
 const Timer = (props) => {
   const [time, setTime] = useState(props.action.duration);
@@ -235,21 +240,45 @@ const Counter = (props) => {
 };
 
 const Text = (props) => {
+    const [progress, setProgress] = useState(0)
     useEffect(() => {
         if (props.isActive) {
             let startTime = Date.now();
             let timer = setInterval(() => {
+                setProgress((Date.now() - startTime)/props.action.duration)
                 if (Date.now() - startTime >= props.action.duration) {
                     props.next();
                     clearInterval(timer);
                 }
-            }, 50);
+            }, 10);
             return () => {
                 clearInterval(timer);
             };
         }
     }, [props.isActive]);
-    return <h1>{props.action.name}</h1>
+    return (
+        <div>
+            <h1>{props.action.name}</h1>
+            <Progress progress={progress * 100}></Progress>
+        </div>
+    )
 }
 
-export default Workout;
+const Progress = (props) => {
+    return (
+        <div className="progress">
+            <div className="bar" style={{width: props.progress + "%"}}></div>
+        </div>
+    )
+}
+
+const Finish = (props) => {
+    return (
+        <div>
+            <h1>Congratulations!</h1>
+            <Link to="/workouts">Return to workouts</Link>
+        </div>
+    )
+}
+
+export default withRouter(Workout);

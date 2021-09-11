@@ -22,8 +22,8 @@ const App = () => {
           <Route exact path="/workouts">
             <Workouts />
           </Route>
-          <Route exact path="/workout">
-            <Workout />
+          <Route path="/workout/:id">
+              <Workout />
           </Route>
           <Route exact path="/food">
             <Food />
