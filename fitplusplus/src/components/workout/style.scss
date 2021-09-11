@@ -20,7 +20,7 @@
       transform: translateX(-50%) scale(0.6);
       cursor: pointer;
       white-space: nowrap;
-      font-size: min(3em, 5vw);
+      font-size: calc(min(3em, 5vw));
       margin: 8px 0px;
 
       &.current {
@@ -39,67 +39,64 @@
     position: absolute;
     top: 0;
     left: 0;
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
-    
 
     .action {
-        position: absolute;
-        transition: opacity 1s, transform 1s, text-shadow 1s, left 1s ease-in-out;
-        transform: translateX(-50%) translateY(-50%) scale(0.4);
-        opacity: 0.5;
-        top: 50%;
-        white-space: nowrap;
-        text-shadow: var(--shadow-1);
+      position: absolute;
+      transition: opacity 1s, transform 1s, text-shadow 1s, left 1s ease-in-out;
+      transform: translateX(-50%) translateY(-50%) scale(0.4);
+      opacity: 0.5;
+      top: 50%;
+      white-space: nowrap;
+      text-shadow: var(--shadow-1);
 
-        font-size: min(4em, 15vw);
+      font-size: calc(min(4em, 15vw));
 
+      &.current {
+        transform: translateX(-50%) translateY(-50%);
+        opacity: 1;
+      }
 
-        &.current {
-            transform: translateX(-50%) translateY(-50%);
-            opacity: 1;
+      h1 {
+        margin: 10px 0;
+      }
+
+      button {
+        font-size: calc(min(2em, 15vw));
+        border-radius: 15px;
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 0px 25px;
+        color: white;
+      }
+
+      a {
+        border-radius: 15px;
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 0px 25px;
+        color: white;
+        text-decoration: none;
+        transition: transform 0.2s;
+        display: block;
+        text-align: center;
+        &:hover {
+          transform: scale(1.1);
         }
+      }
 
-        h1{
-            margin: 10px 0;
+      .progress {
+        height: 40px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        overflow: hidden;
+
+        .bar {
+          background-color: rgb(255, 255, 255);
+          height: 100%;
         }
-
-        button{
-            font-size: min(2em, 15vw);
-            border-radius: 15px;
-            background-color: rgba(0,0,0,0.3);
-            padding: 0px 25px;
-            color: white;
-        }
-
-        a {
-            border-radius: 15px;
-            background-color: rgba(0,0,0,0.1);
-            padding: 0px 25px;
-            color: white;
-            text-decoration: none;
-            transition: transform 0.2s;
-            display: block;
-            text-align: center;
-            &:hover{
-                transform: scale(1.1);
-            }
-
-        }
-
-        .progress {
-            height: 40px;
-            width: 100%;
-            background-color: rgba(0,0,0,0.2);
-            border-radius: 10px;
-            overflow:hidden;
-
-            .bar {
-                background-color: rgb(255,255,255);
-                height: 100%;
-            } 
-        }
+      }
     }
   }
 }

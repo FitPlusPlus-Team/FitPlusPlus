@@ -1,9 +1,6 @@
 import React from "react";
 import Navbar from "../Navbar";
-import apple from "./img/imgs/apple.jpg";
-import beefSteak from "./img/imgs/beefSteak.jpg";
-import chickenBreast from "./img/imgs/chickenBreast.jpg";
-import spinach from "./img/imgs/spinach.jpg";
+import { apple, beefSteak, chickenBreast, spinach } from "./img/exportimg";
 
 const foodImgChoice = {
   Apple: apple,

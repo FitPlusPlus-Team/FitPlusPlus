@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../Navbar";
 import { foodList } from "./foodlist";
+import { apple, beefSteak, chickenBreast, spinach } from "./img/exportimg";
 import "./style.scss";
 
 const Food = () => {
@@ -21,6 +22,11 @@ const Food = () => {
       window.location.origin + "/food/" + evt.target.id.toLowerCase();
   };
 
+  const foodCardBG = {
+    background: "url(" + apple + ") no-repeat",
+    backgroundSize: "contain",
+  };
+
   return (
     <div id="food-page">
       <Navbar backLink="/" />
@@ -39,10 +45,12 @@ const Food = () => {
           {fullFoodNameList.map((fullFoodName) => {
             return (
               <div
+                style={foodCardBG}
                 className="foodCard"
                 id={fullFoodName}
                 key={fullFoodName}
                 onClick={redirectFoodSite}
+                onLoad={() => console.log("hi")}
               >
                 <h3 className="foodCardTitle">
                   {foodList[fullFoodName].foodName}
