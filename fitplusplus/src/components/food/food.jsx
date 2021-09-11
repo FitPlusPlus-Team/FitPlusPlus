@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../Navbar";
 import { foodList } from "./foodlist";
 import { apple, beefSteak, chickenBreast, spinach } from "./img/exportimg";
@@ -44,18 +44,7 @@ const Food = () => {
         <div className="foodDisplay">
           {fullFoodNameList.map((fullFoodName) => {
             return (
-              <div
-                style={foodCardBG}
-                className="foodCard"
-                id={fullFoodName}
-                key={fullFoodName}
-                onClick={redirectFoodSite}
-                onLoad={() => console.log("hi")}
-              >
-                <h3 className="foodCardTitle">
-                  {foodList[fullFoodName].foodName}
-                </h3>
-              </div>
+                <FoodCard foodCardBG={foodCardBG} fullFoodName={fullFoodName} redirectFoodSite={redirectFoodSite} foodList={foodList} />
             );
           })}
         </div>
@@ -63,5 +52,27 @@ const Food = () => {
     </div>
   );
 };
+
+const FoodCard = (props) => {
+    
+    useEffect(()=>{
+        console.log("put onload code here")
+    },[])
+
+    return (
+        <div
+            style={props.foodCardBG}
+            className="foodCard"
+            id={props.fullFoodName}
+            key={props.fullFoodName}
+            onClick={props.redirectFoodSite}
+            onLoad={() => console.log("hi")}
+        >
+            <h3 className="foodCardTitle">
+                {props.foodList[props.fullFoodName].foodName}
+            </h3>
+        </div>
+    )
+}
 
 export default Food;
