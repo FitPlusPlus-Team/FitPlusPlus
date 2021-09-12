@@ -142,7 +142,7 @@ export let workoutData = [
         name: "Pre-Workout Warmup",
         id: "pre-workout-warmup",
         background: "linear-gradient(45deg, #4FA732, #4BD88D)",
-        time: "10 min",
+        time: "5 min",
         actions: [
             {
                 type: "start",
@@ -158,6 +158,42 @@ export let workoutData = [
                 type: "timer",
                 duration: 20_000,
                 name: "20 second Toe Touches",
+            },
+            {
+                type: "counter",
+                duration: 20_000,
+                count: 2_000,
+                name: "20 Lunges",
+            },
+            {
+                type: "text",
+                duration: 10_000,
+                name: "10 second rest",
+            },
+            {
+                type: "timer",
+                duration: 40_000,
+                name: "40 second High Knees"
+            },
+            {
+                type: "timer",
+                duration: 40_000,
+                name: "40 second Butt Kicks"
+            },
+            {
+                type: "text",
+                duration: 10_000,
+                name: "10 second rest",
+            },
+            {
+                type: "timer",
+                duration: 60_000,
+                name: "60 second run"
+            },
+            {
+                type: "timer",
+                duration: 30_000,
+                name: "30 second Mountain Climbers"
             },
             {
                 type: "finish",
