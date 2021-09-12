@@ -1,13 +1,16 @@
 import React from "react";
 import MainNavbar from "../MainNavbar";
 import { Link } from "react-router-dom";
-import ColorSwitcher from "../ColorSwitcher";
 import "./style.scss";
-import {workoutData} from "../../workoutData"
+import { workoutData } from "../../workoutData";
 
 const WorkoutCard = (props) => {
   return (
-    <Link to={"/workout/" + props.id} className="workout-card"  style={{background: props.background}}>
+    <Link
+      to={"/workout/" + props.id}
+      className="workout-card"
+      style={{ background: props.background }}
+    >
       <div className="card-description">
         <h1>{props.title}</h1>
         <p>{props.time}</p>
@@ -31,7 +34,7 @@ const Home = () => {
               live as healthy as you can
             </p>
             <Link to="/workouts">
-                <button className="accent-button">Get started</button>
+              <button className="accent-button">Get started</button>
             </Link>
           </div>
           <div className="right">
@@ -430,11 +433,19 @@ const Home = () => {
             &nbsp;We provide a variety of exercises that are perfect for you.
           </p>
           <div id="workout-cards">
-          {
-              workoutData.map((workout)=>{
-                  return <WorkoutCard key={workout.id} title={workout.name} background={workout.background} time={workout.time} id={workout.id}/>
-              }).slice(0,3)
-          }
+            {workoutData
+              .map((workout) => {
+                return (
+                  <WorkoutCard
+                    key={workout.id}
+                    title={workout.name}
+                    background={workout.background}
+                    time={workout.time}
+                    id={workout.id}
+                  />
+                );
+              })
+              .slice(0, 3)}
           </div>
         </div>
       </section>

@@ -23,8 +23,7 @@ const Food = () => {
   };
 
   const foodCardBG = {
-    background: "url(" + apple + ") no-repeat",
-    backgroundSize: "contain",
+    background: "linear-gradient(125.63deg, #9A77D2 10.69%, #5B78DD 91.15%)",
   };
 
   return (
@@ -44,7 +43,12 @@ const Food = () => {
         <div className="foodDisplay">
           {fullFoodNameList.map((fullFoodName) => {
             return (
-                <FoodCard foodCardBG={foodCardBG} fullFoodName={fullFoodName} redirectFoodSite={redirectFoodSite} foodList={foodList} />
+              <FoodCard
+                foodCardBG={foodCardBG}
+                fullFoodName={fullFoodName}
+                redirectFoodSite={redirectFoodSite}
+                foodList={foodList}
+              />
             );
           })}
         </div>
@@ -54,25 +58,24 @@ const Food = () => {
 };
 
 const FoodCard = (props) => {
-    
-    useEffect(()=>{
-        console.log("put onload code here")
-    },[])
+  useEffect(() => {
+    console.log("put onload code here");
+  }, []);
 
-    return (
-        <div
-            style={props.foodCardBG}
-            className="foodCard"
-            id={props.fullFoodName}
-            key={props.fullFoodName}
-            onClick={props.redirectFoodSite}
-            onLoad={() => console.log("hi")}
-        >
-            <h3 className="foodCardTitle">
-                {props.foodList[props.fullFoodName].foodName}
-            </h3>
-        </div>
-    )
-}
+  return (
+    <div
+      style={props.foodCardBG}
+      className="foodCard"
+      id={props.fullFoodName}
+      key={props.fullFoodName}
+      onClick={props.redirectFoodSite}
+      onLoad={() => console.log("hi")}
+    >
+      <h3 className="foodCardTitle">
+        {props.foodList[props.fullFoodName].foodName}
+      </h3>
+    </div>
+  );
+};
 
 export default Food;
