@@ -1,12 +1,20 @@
 import React from "react";
 import MainNavbar from "../MainNavbar";
+import { Link } from "react-router-dom";
 import ColorSwitcher from "../ColorSwitcher";
 import "./style.scss";
+import {workoutData} from "../../workoutData"
 
-const WorkoutCard = () => {
-  return <div className="workout-card"></div>;
+const WorkoutCard = (props) => {
+  return (
+    <Link to={"/workout/" + props.id} className="workout-card"  style={{background: props.background}}>
+      <div className="card-description">
+        <h1>{props.title}</h1>
+        <p>{props.time}</p>
+      </div>
+    </Link>
+  );
 };
-
 const Home = () => {
   return (
     <div id="homepage">
@@ -22,7 +30,9 @@ const Home = () => {
               Fit++ offers an varaity of workouts made by experts, to help you
               live as healthy as you can
             </p>
-            <button className="accent-button">Get started</button>
+            <Link to="/workouts">
+                <button className="accent-button">Get started</button>
+            </Link>
           </div>
           <div className="right">
             <svg
@@ -420,9 +430,11 @@ const Home = () => {
             &nbsp;We provide a variety of exercises that are perfect for you.
           </p>
           <div id="workout-cards">
-            <WorkoutCard />
-            <WorkoutCard />
-            <WorkoutCard />
+          {
+              workoutData.map((workout)=>{
+                  return <WorkoutCard key={workout.id} title={workout.name} background={workout.background} time={workout.time} id={workout.id}/>
+              }).slice(0,3)
+          }
           </div>
         </div>
       </section>
@@ -882,7 +894,7 @@ const Home = () => {
         <div className="container">
           <h1>Any questions?</h1>
 
-          <a href="mailto:example@example.com">
+          <a href="mailto:support@tonyzhang.net">
             <button className="accent-button"> contact us</button>
           </a>
         </div>

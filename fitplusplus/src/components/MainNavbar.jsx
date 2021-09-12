@@ -13,9 +13,9 @@ const MainNavbar = () => {
       <Link to="/workouts">Workouts</Link>
       <Link to="/food">Food</Link>
       <div className="spacer"></div>
-      <button className="accent-button" id="sign-in">
-        Sign in
-      </button>
+      <a href="mailto:support@tonyzhang.net">
+          <button className="accent-button"> contact us</button>
+      </a>
     </nav>
   );
 };

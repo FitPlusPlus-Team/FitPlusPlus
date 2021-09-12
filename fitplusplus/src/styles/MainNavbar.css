@@ -9,6 +9,10 @@ nav {
   box-sizing: border-box;
 }
 
+nav button{
+    border-radius: 25px;
+}
+
 nav * {
   transition: transform 0.2s;
 }

@@ -1,155 +1,184 @@
 #homepage {
-  header {
-    padding: 0 50px;
-    max-width: 1200px;
-    margin: auto;
-    position: relative;
-  }
+    header {
+        padding: 0 50px;
+        max-width: 1200px;
+        margin: auto;
+        position: relative;
+    }
 
-  header .container {
-    width: 100%;
-    padding: 20px 0;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: Max(400px, 60vh);
-    margin-bottom: 50px;
-    gap: 60px;
-  }
+    header .container {
+        width: 100%;
+        padding: 20px 0;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: Max(400px, 60vh);
+        margin-bottom: 50px;
+        gap: 60px;
+    }
 
-  header .container .left h1 {
-    font-size: 80px;
-    margin-bottom: 25px;
-  }
+    header .container .left h1 {
+        font-size: 80px;
+        margin-bottom: 25px;
+    }
 
-  header .container .left p {
-    margin-bottom: 40px;
-  }
+    header .container .left p {
+        margin-bottom: 40px;
+    }
 
-  header .container .right svg {
-    width: 100%;
-    height: 100%;
-  }
+    header .container .right svg {
+        width: 100%;
+        height: 100%;
+    }
 
-  #scroll-disclosure {
-    background-color: var(--background-secondary);
-    border-radius: 50px;
-    padding: 14px 10px;
-    width: 50px;
-    height: 50px;
-  }
+    #scroll-disclosure {
+        background-color: var(--background-secondary);
+        border-radius: 50px;
+        padding: 14px 10px;
+        width: 50px;
+        height: 50px;
+    }
 
-  #our-workouts {
-    background-color: var(--background-secondary);
-    padding: 200px 0px;
-    clip-path: polygon(
-      0 100px,
-      calc(50% - 80px) 100px,
-      calc(50% + 80px) 0,
-      100% 0,
-      100% 100%,
-      0 calc(100% - 100px)
-    );
-  }
+    #our-workouts {
+        background-color: var(--background-secondary);
+        padding: 200px 0px;
+        clip-path: polygon(
+        0 100px,
+        calc(50% - 80px) 100px,
+        calc(50% + 80px) 0,
+        100% 0,
+        100% 100%,
+        0 calc(100% - 100px)
+        );
+    }
 
-  #our-workouts .container {
-    padding: 50px;
-    max-width: 1200px;
-    margin: auto;
-  }
+    #our-workouts .container {
+        padding: 50px;
+        max-width: 1200px;
+        margin: auto;
+    }
 
-  #our-workouts h1 {
-    font-size: 50px;
-    margin-bottom: 20px;
-  }
+    #our-workouts h1 {
+        font-size: 50px;
+        margin-bottom: 20px;
+    }
 
-  #our-workouts p {
-    margin-bottom: 50px;
-  }
+    #our-workouts p {
+        margin-bottom: 50px;
+    }
 
-  #workout-cards {
-    display: flex;
-    width: 100%;
-    height: 400px;
-    gap: 20px;
-  }
+    #workout-cards {
+        display: flex;
+        width: 100%;
+        height: 400px;
+        gap: 20px;
+    }
 
-  .workout-card {
-    background-color: var(--background-secondary);
-    box-shadow: var(--shadow-1);
-    border-radius: 8px;
-    flex-grow: 1;
-  }
+    .workout-card {
+        width: 300px;
+        position: relative;
+        box-shadow: var(--shadow-1);
+        border-radius: 8px;
+        flex-grow: 1;
+        overflow: hidden;
+        transition: transform 0.2s, filter 0.2s;
 
-  #why {
-    padding: 50px;
-    max-width: 1000px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
+        .card-description {
+            position: absolute;
+            bottom: 0;
+            padding: 10px 15px;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
 
-  #why h1 {
-    font-size: 50px;
-    margin-bottom: 15px;
-  }
+            h1 {
+                font-size: 20px !important;
+                margin: 2px 0 !important;
+            }
+            p {
+                font-size: 14px !important;
+                margin: 2px 0 !important;
+                opacity: 0.5;
+            }
+        }
 
-  #why p {
-    margin-bottom: 40px;
-  }
+        &:hover {
+            transform: scale(1.04);
+        }
 
-  #why svg {
-    width: 100%;
-  }
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+    #why {
+        padding: 50px;
+        max-width: 1000px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-  #what-we-provide {
-    background-color: #47556a;
-    color: white;
-    padding: 150px 0;
-    clip-path: polygon(0 100px, 100% 0, 100% 100%, 0 100%);
-  }
+    #why h1 {
+        font-size: 50px;
+        margin-bottom: 15px;
+    }
 
-  #what-we-provide .container {
-    max-width: 1200px;
-    margin: auto;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 60px;
-  }
+    #why p {
+        margin-bottom: 40px;
+    }
 
-  #what-we-provide .container .left h1,
-  #what-we-provide .container .left p {
-    color: #fef9f2;
-  }
+    #why svg {
+        width: 100%;
+    }
 
-  #what-we-provide .container .right {
-    width: 1400px;
-  }
+    #what-we-provide {
+        background-color: #47556a;
+        color: white;
+        padding: 150px 0;
+        clip-path: polygon(0 100px, 100% 0, 100% 100%, 0 100%);
+    }
 
-  #what-we-provide .container .right svg {
-    width: 100%;
-    height: 100%;
-  }
-  #what-we-provide h1 {
-    font-size: 50px;
-  }
+    #what-we-provide .container {
+        max-width: 1200px;
+        margin: auto;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 60px;
+    }
 
-  footer {
-    background-color: var(--background-tertiary);
-  }
+    #what-we-provide .container .left h1,
+    #what-we-provide .container .left p {
+        color: #fef9f2;
+    }
 
-  footer h1 {
-    font-size: 40px;
-  }
-  footer .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 50px 0;
-    padding-bottom: 150px;
-  }
+    #what-we-provide .container .right {
+        width: 1400px;
+    }
+
+    #what-we-provide .container .right svg {
+        width: 100%;
+        height: 100%;
+    }
+    #what-we-provide h1 {
+        font-size: 50px;
+    }
+
+    footer {
+        background-color: var(--background-tertiary);
+    }
+
+    footer h1 {
+        font-size: 40px;
+    }
+    footer .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 50px 0;
+        padding-bottom: 150px;
+    }
 }
